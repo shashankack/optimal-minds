@@ -108,32 +108,6 @@ const HeroSection = () => {
         </div>
       </section>
 
-      {/* <section className="about-section">
-        <div className="background-image">
-          <img src={bgWhite} alt="" />
-        </div>
-        <div className="about-content">
-          <div className="about-image">
-            <img src={heroImg} alt="" />
-          </div>
-          <div className="about-text">
-            <h2>Why Optimal Minds</h2>
-            <p>
-              Optimal Minds offers holistic psychiatric care with advanced
-              treatments for ADHD, autism, anxiety, OCD, PTSD, addiction, and
-              more. We provide expert guidance, evidence-based interventions,
-              and compassionate support for your mental well-being.
-              <ul>
-                <li>Expert-Led, Compassionate Care</li>
-                <li>Cutting-Edge Treatments & Technology</li>
-                <li>Holistic & Multidisciplinary Approach</li>
-              </ul>
-            </p>
-            <button className="cta-button">Meet our Founder</button>
-          </div>
-        </div>
-      </section> */}
-
       <section className="about-section" ref={aboutRef}>
         <img src={bgWhite} className="bg-layer" />
         <div className="about-container">
@@ -156,26 +130,7 @@ const HeroSection = () => {
               Learn More
             </button>
 
-            {/* <div className="about-highlights">
-              <div className="top">
-                <div className="highlight-item">
-                  <FaBrain className="icon" />
-                  <p>Advanced Science-Based Treatments</p>
-                </div>
-              </div>
-              <div className="bottom">
-                <div className="highlight-item">
-                  <FaUserMd className="icon" />
-                  <p>Expert Mental Health Professionals</p>
-                </div>
-                <div className="highlight-item">
-                  <FaHandsHelping className="icon" />
-                  <p>Holistic & Compassionate Care</p>
-                </div>
-              </div>
-            </div> */}
-
-            <div className="about-links">
+            {/* <div className="about-links">
               <button
                 onClick={() => handleRedirect("/about/founder")}
                 className="about-link"
@@ -197,7 +152,7 @@ const HeroSection = () => {
               >
                 Mental Health Awareness (CSR)
               </button>
-            </div>
+            </div> */}
           </div>
         </div>
       </section>

@@ -1,11 +1,8 @@
+import React from "react";
 import HeroSection from "../components/HeroSection";
 
-const home = () => {
-  return (
-    <>
-      <HeroSection />
-    </>
-  );
+const Home = () => {
+  return <HeroSection />;
 };
 
-export default home;
+export default Home;
