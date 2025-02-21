@@ -3,13 +3,14 @@ import "../styles/pages/home.scss";
 import heroBg from "../assets/images/hero-bg.png";
 import heroImg from "../assets/images/hero.png";
 import bgWhite from "../assets/images/bg-white.png";
-import { servicesData } from "../data/services";
+import { servicesData, testimonials } from "../data/dummyData";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useNavigate } from "react-router";
 import VideoCards from "../components/VideoCards";
 import SplitType from "split-type";
 import Services from "../components/Services/Services";
+import Testimonials from "../components/Testimonials/Quotes/Testimonials";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -56,7 +57,6 @@ const Home = () => {
         scrollTrigger: {
           trigger: heroContentRef.current,
           start: "top 70%",
-          markers: true,
         },
       }
     );
@@ -159,7 +159,11 @@ const Home = () => {
         </p>
       </section>
 
+      {/* Services Section */}
       <Services servicesData={servicesData} />
+
+      {/* Testimonials Section */}
+      <Testimonials testimonials={testimonials} background={bgWhite} />
     </>
   );
 };

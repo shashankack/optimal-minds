@@ -44,3 +44,30 @@ export const servicesData = [
     image: "https://placehold.co/1200?text=Senior+Mental+Health"
   }
 ];
+
+export const testimonials = [
+  {
+    quote:
+      "Optimal Minds changed my life. The compassionate care and personalized treatment helped me overcome my anxiety like never before.",
+  },
+  {
+    quote:
+      "I finally feel heard and understood. The doctors here truly take the time to understand your concerns and offer the best possible solutions.",
+  },
+  {
+    quote:
+      "Their holistic approach made a world of difference for my son. The support and guidance we received have been invaluable.",
+  },
+  {
+    quote:
+      "After struggling with OCD for years, the therapy and advanced interventions at Optimal Minds gave me a new perspective and control over my life.",
+  },
+  {
+    quote:
+      "From the initial consultation to the ongoing support, everything about this clinic speaks of professionalism and genuine care.",
+  },
+  {
+    quote:
+      "I was skeptical about seeking help, but now I wish I had come here sooner. The team is incredibly skilled and empathetic.",
+  },
+];
