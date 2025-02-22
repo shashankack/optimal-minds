@@ -4,6 +4,9 @@
   left: 0;
   width: 100%;
   padding: 20px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   transition: all 0.4s ease-in-out;
   background: transparent;
   z-index: 1000;
@@ -26,6 +29,8 @@
   .desktop-menu {
   ul {
     display: flex;
+    align-items: center;
+    justify-content: center;
     list-style: none;
     gap: 90px;
     transition: all 0.3s ease-in-out;
@@ -41,7 +46,6 @@
         display: inline-block;
         transition: all 0.3s ease-in-out;
         overflow: hidden;
-        height: 26px;
 
         span {
           display: block;
@@ -142,11 +146,11 @@
 
     .desktop-menu {
       ul {
-        gap: 100px;
         transition: all 0.3s ease-in-out;
 
         li {
           a {
+            margin-top: 10px;
             font-size: 18px;
             transition: all 0.3s ease-in-out;
           }

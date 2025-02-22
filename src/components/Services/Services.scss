@@ -37,6 +37,11 @@
     &:hover,
     &.active {
       background-color: #1e4021;
+
+      h3 {
+        letter-spacing: .05rem;
+        animation: bounce 0.5s ease-in;
+      }
     }
 
     .service-icon {
@@ -46,6 +51,19 @@
 
     h3 {
       font-size: 1.5rem;
+      transition: all 0.3s ease-in;
+    }
+
+    @keyframes bounce {
+      0% {
+        letter-spacing: normal;
+      }
+      50% {
+        letter-spacing: .10rem;
+      }
+      100% {
+        letter-spacing: .05rem;
+      }
     }
   }
 

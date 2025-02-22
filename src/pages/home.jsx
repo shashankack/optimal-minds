@@ -11,6 +11,9 @@ import VideoCards from "../components/VideoCards";
 import SplitType from "split-type";
 import Services from "../components/Services/Services";
 import Testimonials from "../components/Testimonials/Quotes/Testimonials";
+import Contact from "../components/Contact/Contact";
+import FAQ from "../components/FAQ/FAQ";
+
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -130,7 +133,19 @@ const Home = () => {
         <img src={bgWhite} className="bg-layer" />
         <div className="about-container">
           <div className="about-image" ref={imageRef}>
-            <img src={heroImg} alt="About Optimal Minds" />
+            <img
+              src={heroImg}
+              alt="About Optimal Minds"
+              style={{
+                WebkitMaskImage: `url(${bgWhite})`,
+                maskImage: `url(${bgWhite})`,
+                WebkitMaskSize: "cover",
+                maskSize: "cover",
+                WebkitMaskRepeat: "no-repeat",
+                maskRepeat: "no-repeat",
+              }}
+            />
+            {/* <div className="image-overlay" /> */}
           </div>
 
           <div className="about-preview" ref={contentRef}>
@@ -164,6 +179,11 @@ const Home = () => {
 
       {/* Testimonials Section */}
       <Testimonials testimonials={testimonials} background={bgWhite} />
+
+      <section className="faq-contact-section">
+        <FAQ />
+        <Contact />
+      </section>
     </>
   );
 };
