@@ -13,10 +13,11 @@ const FAQ = ({ data, title }) => {
       <h2>{title}</h2>
       {data.map((item, index) => (
         <div
+          onClick={() => toggleFAQ(index)}
           key={index}
           className={`faq-item ${openIndex === index ? "open" : ""}`}
         >
-          <div className="faq-question" onClick={() => toggleFAQ(index)}>
+          <div className="faq-question">
             <h3>{item.question}</h3>
             <span className="faq-icon">{openIndex === index ? "−" : "+"}</span>
           </div>
