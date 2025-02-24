@@ -10,28 +10,8 @@ import "./testimonials.scss";
 gsap.registerPlugin(ScrollTrigger);
 
 const Testimonials = ({ testimonials, background }) => {
-  const sectionRef = useRef(null);
-
-  useEffect(() => {
-    gsap.fromTo(
-      sectionRef.current,
-      { opacity: 0, y: 50 },
-      {
-        opacity: 1,
-        y: 0,
-        duration: 1,
-        ease: "power2.out",
-        scrollTrigger: {
-          trigger: sectionRef.current,
-          start: "top 80%",
-          toggleActions: "play none none reverse",
-        },
-      }
-    );
-  }, []);
-
   return (
-    <section className="testimonial-section" ref={sectionRef}>
+    <section className="testimonial-section">
         <div className="background">
             <img src={background} alt="background" />
         </div>
@@ -42,6 +22,7 @@ const Testimonials = ({ testimonials, background }) => {
           modules={[Pagination, Autoplay]}
           spaceBetween={40}
           slidesPerView={1}
+          loop={true}
           pagination={{ clickable: true, dynamicBullets: true }}
           autoplay={{ delay: 3000, disableOnInteraction: false }}
           grabCursor={true}

@@ -1,5 +1,5 @@
 .services-section {
-  padding: 80px 0;
+  padding: 80px 10%;
   text-align: center;
   height: 100vh;
 
@@ -17,7 +17,7 @@
   }
 
   .services-list {
-    width: 30%;
+    width: 40%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -25,69 +25,104 @@
   }
 
   .services-card {
-    background-color: #295a2d;
-    color: #eeeeee;
+    background-color: transparent;
+    color: #438423;
     padding: 20px;
     width: 100%;
-    border-radius: 20px;
     text-align: center;
     cursor: pointer;
+    display: flex;
+    gap: 30px;
+    justify-content: start;
+    align-items: center;
+    font-family: "Gontserrat";
+    position: relative;
     transition: background-color 0.3s ease-in-out;
-
+  
+    &::before,
+    &::after {
+      content: "";
+      position: absolute;
+      width: 0;
+      height: 2px;
+      background-color: #438423;
+      transition: width 0.5s ease-out;
+    }
+  
+    &::before {
+      top: 0;
+      left: 0;
+    }
+  
+    &::after {
+      bottom: 0;
+      right: 0;
+    }
+  
     &:hover,
     &.active {
-      background-color: #1e4021;
-
+      &::before {
+        width: 100%; // Expands the top border from left to right
+      }
+  
+      &::after {
+        width: 100%; // Expands the bottom border from right to left
+      }
+  
       h3 {
-        letter-spacing: .05rem;
+        letter-spacing: 0.05rem;
         animation: bounce 0.5s ease-in;
       }
     }
-
+  
     .service-icon {
-      font-size: 2rem;
+      font-size: 3rem;
       margin-bottom: 10px;
     }
-
+  
     h3 {
-      font-size: 1.5rem;
+      font-size: 1.6rem;
       transition: all 0.3s ease-in;
     }
-
+  
     @keyframes bounce {
       0% {
         letter-spacing: normal;
       }
       50% {
-        letter-spacing: .10rem;
+        letter-spacing: 0.07rem;
       }
       100% {
-        letter-spacing: .05rem;
+        letter-spacing: 0.05rem;
       }
     }
   }
+  
 
   .service-details {
-    width: 60%;
-    height: 100%;
+    width: 40%;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: start;
     text-align: center;
     padding: 20px;
+    position: relative;
 
     img {
       width: 100%;
-      height: 600px;
+      height: 100%;
       object-fit: cover;
       border-radius: 10px;
-      position: relative;
     }
 
     p {
+      bottom: 30px;
+      left: 30px;
+      text-align: start;
+      position: absolute;
       font-size: 1.2rem;
-      color: #242424;
+      color: #fff;
       max-width: 400px;
     }
   }

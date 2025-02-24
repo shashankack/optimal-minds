@@ -1,14 +1,17 @@
-import { useState } from "react";
+import { useState, useMemo } from "react";
 import "./Services.scss";
 
 const Services = ({ servicesData }) => {
   const [activeService, setActiveService] = useState(servicesData[0]);
 
+  const serviceImage = useMemo(() => {
+    return <img src={activeService.image} alt={activeService.title} />;
+  }, [activeService.image]);
+
   return (
     <section className="services-section">
       <h2>Our Services</h2>
       <div className="services-container">
-        {/* Left Side - Services List */}
         <div className="services-list">
           {servicesData.map((service) => (
             <div
@@ -25,7 +28,7 @@ const Services = ({ servicesData }) => {
         </div>
 
         <div className="service-details">
-          <img src={activeService.image} alt={activeService.title} />
+          {serviceImage}
           <p>{activeService.description}</p>
         </div>
       </div>

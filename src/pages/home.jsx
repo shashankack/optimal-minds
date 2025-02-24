@@ -3,7 +3,7 @@ import "../styles/pages/home.scss";
 import heroBg from "../assets/images/hero-bg.png";
 import heroImg from "../assets/images/hero.png";
 import bgWhite from "../assets/images/bg-white.png";
-import { servicesData, testimonials } from "../data/dummyData";
+import { faqData, servicesData, testimonials } from "../data/dummyData";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useNavigate } from "react-router";
@@ -14,13 +14,12 @@ import Testimonials from "../components/Testimonials/Quotes/Testimonials";
 import Contact from "../components/Contact/Contact";
 import FAQ from "../components/FAQ/FAQ";
 
-
 gsap.registerPlugin(ScrollTrigger);
 
 const Home = () => {
   const aboutRef = useRef(null);
-  const imageRef = useRef(null);
-  const contentRef = useRef(null);
+  // const imageRef = useRef(null);
+  // const contentRef = useRef(null);
   const videoContentRef = useRef(null);
   const heroContentRef = useRef(null);
   const navigate = useNavigate();
@@ -49,6 +48,21 @@ const Home = () => {
     });
 
     gsap.fromTo(
+      aboutRef.current,
+      { opacity: 0, y: 100 },
+      {
+        opacity: 1,
+        y: 0,
+        duration: 1,
+        ease: "power3.out",
+        scrollTrigger: {
+          trigger: aboutRef.current,
+          start: "top 70%",
+        },
+      }
+    );
+
+    gsap.fromTo(
       heroContentRef.current,
       { opacity: 0, x: -700 },
       {
@@ -64,39 +78,39 @@ const Home = () => {
       }
     );
 
-    gsap.fromTo(
-      imageRef.current,
-      { opacity: 0, x: -100 },
-      {
-        opacity: 1,
-        x: 0,
-        duration: 1,
-        ease: "power3.out",
-        scrollTrigger: {
-          trigger: aboutRef.current,
-          start: "top 70%",
-          end: "top 30%",
-          scrub: 1,
-        },
-      }
-    );
+    // gsap.fromTo(
+    //   imageRef.current,
+    //   { opacity: 0, x: -100 },
+    //   {
+    //     opacity: 1,
+    //     x: 0,
+    //     duration: 1,
+    //     ease: "power3.out",
+    //     scrollTrigger: {
+    //       trigger: aboutRef.current,
+    //       start: "top 70%",
+    //       end: "top 30%",
+    //       scrub: 1,
+    //     },
+    //   }
+    // );
 
-    gsap.fromTo(
-      contentRef.current,
-      { opacity: 0, x: 100 },
-      {
-        opacity: 1,
-        x: 0,
-        duration: 1,
-        ease: "power3.out",
-        scrollTrigger: {
-          trigger: aboutRef.current,
-          start: "top 70%",
-          end: "top 30%",
-          scrub: 1,
-        },
-      }
-    );
+    // gsap.fromTo(
+    //   contentRef.current,
+    //   { opacity: 0, x: 100 },
+    //   {
+    //     opacity: 1,
+    //     x: 0,
+    //     duration: 1,
+    //     ease: "power3.out",
+    //     scrollTrigger: {
+    //       trigger: aboutRef.current,
+    //       start: "top 70%",
+    //       end: "top 30%",
+    //       scrub: 1,
+    //     },
+    //   }
+    // );
   }, []);
 
   return (
@@ -129,7 +143,7 @@ const Home = () => {
         </div>
       </section>
 
-      <section className="about-section" ref={aboutRef}>
+      {/* <section className="about-section" ref={aboutRef}>
         <img src={bgWhite} className="bg-layer" />
         <div className="about-container">
           <div className="about-image" ref={imageRef}>
@@ -145,7 +159,6 @@ const Home = () => {
                 maskRepeat: "no-repeat",
               }}
             />
-            {/* <div className="image-overlay" /> */}
           </div>
 
           <div className="about-preview" ref={contentRef}>
@@ -164,6 +177,32 @@ const Home = () => {
             </button>
           </div>
         </div>
+      </section> */}
+
+      <section className="about-section">
+        <div className="about-content" ref={aboutRef}>
+          <h2>About Optimal Minds</h2>
+          <p>
+            At Optimal Minds, we provide holistic psychiatric care, advanced
+            interventions, and counseling to enhance your overall well-being.
+            Our center was built to clear your doubts, conduct initial
+            assessments, empower you with knowledge about treatment plans, and
+            offer reassurance about your mental health.
+          </p>
+          <p>
+            We offer compassionate, all-encompassing care for various mental
+            health conditions, from ADHD, autism care support, childhood
+            behavioral disturbances, to adolescent depression, adult anxiety
+            disorders, OCD, PTSD, addiction disorders, and dementia.
+          </p>
+          <p>
+            Our mission is to help you find inner peace by learning strategies
+            to develop and sustain resilience.
+          </p>
+          <button className="cta-button secondary" onClick={() => navigate("/services")}>
+            Learn More
+          </button>
+        </div>
       </section>
 
       <section className="video-cards-section">
@@ -181,7 +220,7 @@ const Home = () => {
       <Testimonials testimonials={testimonials} background={bgWhite} />
 
       <section className="faq-contact-section">
-        <FAQ />
+        <FAQ data={faqData} title="Your Mental Health Questions, Answered"/>
         <Contact />
       </section>
     </>
