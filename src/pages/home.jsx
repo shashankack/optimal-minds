@@ -27,7 +27,7 @@ const Home = () => {
   const handleRedirect = (link) => {
     navigate(link);
     window.scrollTo(0, 0);
-  };
+};
 
   useEffect(() => {
     const typeSplit = new SplitType(videoContentRef.current, {
