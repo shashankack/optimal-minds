@@ -1,0 +1,43 @@
+.back-button {
+  display: flex;
+  align-items: center;
+  background: #295a2d;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 15px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s ease-in-out;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  position: fixed;
+  top: 140px;
+  right: 80px;
+  z-index: 10;
+
+  .icon {
+    margin-right: 8px;
+    font-size: 1.2rem;
+  }
+
+  &:hover {
+    transform: scale(1.1);
+  }
+
+  &:active {
+    transform: scale(0.95);
+  }
+}
+
+// Responsive Styles
+@media (max-width: 768px) {
+  .back-button {
+    font-size: 0.9rem;
+    padding: 8px 12px;
+
+    .icon {
+      font-size: 1rem;
+    }
+  }
+}

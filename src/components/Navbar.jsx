@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import logo from "../assets/images/logo.png";
 import "../styles/Navbar.scss";
+import { HashLink } from "react-router-hash-link";
 
 const Navbar = () => {
   const [lastScrollY, setLastScrollY] = useState(0);
@@ -42,7 +43,7 @@ const Navbar = () => {
         <nav className="desktop-menu">
           <ul>
             <li>
-              <a href="#" data-text="Home">
+              <a href="/" data-text="Home">
                 <span>Home</span>
               </a>
             </li>
@@ -52,11 +53,16 @@ const Navbar = () => {
               </a>
             </li>
             <li>
-              <a href="#" data-text="Our Services">
+              <HashLink smooth to="#services" data-text="Our Services">
                 <span>Our Services</span>
+              </HashLink>
+            </li>
+            <li>
+              <a href="#" data-text="Contact Us">
+                <span>Contact Us</span>
               </a>
             </li>
-            <button className="cta-button">Contact Us</button>
+            <button className="cta-button secondary">Book Appointment</button>
           </ul>
         </nav>
 
