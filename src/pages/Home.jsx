@@ -79,7 +79,7 @@ const Home = () => {
 
   return (
     <>
-      <section className="hero-section" style={{ display: "none" }}>
+      <section className="hero-section" style={{ display: "" }}>
         <img src={heroBg} />
 
         <div className="hero-content" ref={heroContentRef}>
@@ -145,16 +145,16 @@ const Home = () => {
       </section>
 
       {/* Services Section */}
-      <div className="services" id="services" style={{ display: "none" }}>
+      <div className="services" id="services" style={{ display: "" }}>
         <Services servicesData={servicesData} />
       </div>
 
       {/* Testimonials Section */}
-      <div style={{ display: "none" }}>
+      <div style={{ display: "" }}>
         <Testimonials testimonials={testimonials} background={bgWhite} />
       </div>
 
-      <section className="faq-contact-section" style={{ display: "none" }}>
+      <section className="faq-contact-section" style={{ display: "" }}>
         <FAQ data={faqData} title="Your Mental Health Questions, Answered" />
         <Contact />
       </section>
