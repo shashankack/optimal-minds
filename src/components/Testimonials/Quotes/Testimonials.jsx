@@ -5,7 +5,7 @@ import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import "swiper/css";
 import "swiper/css/pagination";
-import "./testimonials.scss";
+import "./Testimonials.scss";
 
 gsap.registerPlugin(ScrollTrigger);
 
