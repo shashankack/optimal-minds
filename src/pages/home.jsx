@@ -79,7 +79,7 @@ const Home = () => {
 
   return (
     <>
-      <section className="hero-section">
+      <section className="hero-section" style={{ display: "none" }}>
         <img src={heroBg} />
 
         <div className="hero-content" ref={heroContentRef}>
@@ -107,7 +107,7 @@ const Home = () => {
         </div>
       </section>
 
-      <section className="about-section">
+      <section className="about-section" style={{ display: "" }}>
         <div className="about-content" ref={aboutRef}>
           <h2>About Optimal Minds</h2>
           <p>
@@ -133,13 +133,10 @@ const Home = () => {
           >
             Learn More
           </button>
-          {/* <HashLink smooth to="services" className="cta-link">
-            <button className="cta-button secondary">Learn More</button>
-          </HashLink> */}
         </div>
       </section>
 
-      <section className="video-cards-section">
+      <section className="video-cards-section" style={{ display: "" }}>
         <VideoCards />
         <p className="section-description" ref={videoContentRef}>
           Transforming mental wellness through expert care, advanced treatments,
@@ -148,14 +145,16 @@ const Home = () => {
       </section>
 
       {/* Services Section */}
-      <div className="services" id="services">
+      <div className="services" id="services" style={{ display: "none" }}>
         <Services servicesData={servicesData} />
       </div>
 
       {/* Testimonials Section */}
-      <Testimonials testimonials={testimonials} background={bgWhite} />
+      <div style={{ display: "none" }}>
+        <Testimonials testimonials={testimonials} background={bgWhite} />
+      </div>
 
-      <section className="faq-contact-section">
+      <section className="faq-contact-section" style={{ display: "none" }}>
         <FAQ data={faqData} title="Your Mental Health Questions, Answered" />
         <Contact />
       </section>

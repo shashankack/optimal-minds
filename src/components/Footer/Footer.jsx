@@ -1,7 +1,6 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import "./Footer.scss";
 import footerLogo from "../../assets/images/white-logo.png";
-
 import {
   IoLogoYoutube,
   IoLogoInstagram,
@@ -10,7 +9,26 @@ import {
   IoLogoWhatsapp,
 } from "react-icons/io5";
 
+import { IoIosArrowDown } from "react-icons/io";
+
 const Footer = () => {
+  const [activeIndex, setActiveIndex] = useState(null);
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 768);
+    };
+
+    handleResize();
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  const toggleAccordion = (index) => {
+    setActiveIndex(activeIndex === index ? null : index);
+  };
+
   return (
     <footer className="footer">
       <div className="container">
@@ -21,57 +39,83 @@ const Footer = () => {
 
         <div className="nav-section">
           <div className="nav-links">
-            <div className="nav-group">
-              <h2>About Us</h2>
-              <nav className="nav-link">
-                <a href="#">About Us</a>
-                <a href="#">Contact Us</a>
-                <a href="#">Our Services</a>
-                <a href="#">Privacy Policy</a>
-              </nav>
-            </div>
-            <div className="nav-group">
-              <h2>Quick Links</h2>
-              <nav className="nav-link">
-                <a href="#">Why Us</a>
-                <a href="#">Our Specialized Services</a>
-                <a href="#">Feedback</a>
-                <a href="#">Blogs</a>
-              </nav>
-            </div>
-            <div className="nav-group">
-              <h2>Contact Us</h2>
-              <nav className="nav-link">
-                <a href="#">Adyar, Chennai</a>
-                <a href="#">+91 97008 55553</a>
-              </nav>
-            </div>
+            {[
+              {
+                title: "About Us",
+                links: [
+                  "About Us",
+                  "Contact Us",
+                  "Our Services",
+                  "Privacy Policy",
+                ],
+              },
+              {
+                title: "Quick Links",
+                links: [
+                  "Why Us",
+                  "Our Specialized Services",
+                  "Feedback",
+                  "Blogs",
+                ],
+              },
+              {
+                title: "Contact Us",
+                links: ["Adyar, Chennai", "+91 97008 55553"],
+              },
+            ].map((group, index) => (
+              <div className="nav-group" key={index}>
+                <div
+                  className="nav-header"
+                  onClick={() => isMobile && toggleAccordion(index)}
+                >
+                  <h2>{group.title}</h2>
+                  {isMobile && (
+                    <IoIosArrowDown
+                      className={`arrow-icon ${
+                        activeIndex === index ? "open" : ""
+                      }`}
+                    />
+                  )}
+                </div>
+                <nav
+                  className={`nav-link ${
+                    isMobile ? (activeIndex === index ? "open" : "closed") : ""
+                  }`}
+                >
+                  {group.links.map((link, i) => (
+                    <a href="#" key={i}>
+                      {link}
+                    </a>
+                  ))}
+                </nav>
+              </div>
+            ))}
           </div>
 
           <div className="social-links">
             <ul>
               <li>
-                <a href="">
+                <a href="#">
                   <IoLogoYoutube />
                 </a>
               </li>
               <li>
-                <a href="">
+                <a href="#">
                   <IoLogoInstagram />
                 </a>
               </li>
               <li>
-                <a href="">
+                <a href="#">
                   <IoLogoFacebook />
                 </a>
               </li>
               <li>
-                <a href="">
+                <a href="#">
                   <IoLogoLinkedin />
                 </a>
               </li>
               <li>
-                <a href="">
+                <a href="#">
                   <IoLogoWhatsapp />
                 </a>
               </li>
@@ -79,9 +123,12 @@ const Footer = () => {
           </div>
         </div>
       </div>
+
       <div className="copyright-section">
         <hr />
-        <p>&copy; 2021 Optimal Minds. All Rights Reserved.</p>
+        <p>
+          &copy; {new Date().getFullYear()} Optimal Minds. All Rights Reserved.
+        </p>
       </div>
     </footer>
   );

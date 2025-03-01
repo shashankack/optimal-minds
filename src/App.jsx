@@ -10,7 +10,7 @@ import AboutMission from "./pages/AboutMission.jsx";
 const App = () => {
   return (
     <Router>
-      <Navbar />
+      {/* <Navbar /> */}
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
@@ -19,7 +19,7 @@ const App = () => {
         <Route path="/about/csr" element={<AboutCSR />} />
         {/* <Route path="/services" element={<Services />} /> */}
       </Routes>
-      <Footer />
+      {/* <Footer /> */}
     </Router>
   );
 };
