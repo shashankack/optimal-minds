@@ -22,7 +22,7 @@
   }
 
   .logo {
-    width: clamp(250px, 320px, 400px); // Adjusted without using vw
+    width: 250px; // Adjusted without using vw
     height: auto;
     transition: all 0.3s ease-in-out;
 
@@ -52,7 +52,7 @@
         a {
           font-family: "Montserrat", sans-serif;
           text-decoration: none;
-          color: #438423;
+          color: #295a2d;
           font-size: 1.2rem;
           font-weight: 500;
           position: relative;
@@ -75,7 +75,7 @@
             top: 100%;
             left: 0;
             width: 100%;
-            color: #438423;
+            color: #295a2d;
             transition: transform 0.5s ease-in-out;
           }
 

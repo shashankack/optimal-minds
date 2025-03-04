@@ -12,87 +12,37 @@
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #438423;
+  background: #295a2d;
   border-radius: 50px;
+  height: 50px;
 }
 
 ::-webkit-scrollbar-track {
-  background: #f1f1f1;
-}
-
-
-/* .cta-button {
-  font-family: "Gontserrat";
-  font-weight: 500;
-  font-size: 1.2vw;
-  padding: clamp(10px, 2vw, 12px) clamp(24px, 2vw, 30px);
   background: #438423;
-  color: #fff;
-  border: 1px solid #438423;
-  cursor: pointer;
-  border-radius: 50px;
-  transition: all 0.3s ease-in-out;
-
-  &.primary {
-    background: #438423;
-    color: #fff;
-    border-color: #438423;
-    transition: all 0.3s ease-in-out;
-
-    &:hover {
-      transition: all 0.3s ease-in-out;
-      background: #bee9b2;
-      color: #000;
-      scale: 1.05;
-    }
-
-    &:active {
-      scale: 0.99;
-    }
-  }
-
-  &.secondary {
-    transition: all 0.3s ease-in-out;
-    background: transparent;
-    color: #438423;
-    border-color: #438423;
-
-    &:hover {
-      transition: all 0.3s ease-in-out;
-      background: #438423;
-      color: #fff;
-      scale: 1.05;
-    }
-
-    &:active {
-      scale: 0.99;
-    }
-  }
-} */
+}
 
 .cta-button {
   font-family: "Gontserrat";
   font-weight: 500;
   font-size: 1rem;
   padding: clamp(10px, 2vw, 12px) clamp(24px, 2vw, 30px);
-  background: #438423;
+  background: #295a2d;
   color: #fff;
-  border: 1px solid #438423;
+  border: 1px solid #295a2d;
   cursor: pointer;
   border-radius: 50px;
   transition: all 0.3s ease-in-out;
 
   &.primary {
-    background: #438423;
+    background: #295a2d;
     color: #fff;
-    border-color: #438423;
+    border-color: #295a2d;
     transition: all 0.3s ease-in-out;
 
     &:hover {
       transition: all 0.3s ease-in-out;
       background: #bee9b2;
-      color: #000;
-      scale: 1.03;
+      color: #295a2d;
     }
 
     &:active {
@@ -103,14 +53,12 @@
   &.secondary {
     transition: all 0.3s ease-in-out;
     background: transparent;
-    color: #438423;
-    border-color: #438423;
+    color: #295a2d;
+    border-color: #295a2d;
 
     &:hover {
       transition: all 0.3s ease-in-out;
-      background: #438423;
-      color: #fff;
-      scale: 1.03;
+      background: #bee9b2;
     }
 
     &:active {

@@ -79,7 +79,7 @@ const Home = () => {
   return (
     <>
       <section className="hero-section" style={{ display: "" }}>
-        <img src={heroBg} />
+        {/* <img src={heroBg} /> */}
 
         <div
           className="hero-content"
