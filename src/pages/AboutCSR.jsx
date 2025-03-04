@@ -36,7 +36,7 @@ const AboutCSR = () => {
       );
 
       // Animating Sections with Stagger
-      gsap.utils.toArray(".csr-section").forEach((section, index) => {
+      gsap.utils.toArray(".csr-grid-item").forEach((section, index) => {
         gsap.fromTo(
           section,
           { opacity: 0, y: 50 },
@@ -75,7 +75,7 @@ const AboutCSR = () => {
       {/* Grid Section */}
       <div className="csr-grid">
         {/* Heart to Heart Campaign */}
-        <div className="csr-section">
+        <div className="csr-grid-item">
           <FaHeartbeat className="icon" />
           <h3>The "Heart to Heart" Campaign</h3>
           <p>
@@ -87,7 +87,7 @@ const AboutCSR = () => {
         </div>
 
         {/* Stress & Addiction Awareness */}
-        <div className="csr-section">
+        <div className="csr-grid-item">
           <FaBrain className="icon" />
           <h3>Stress Management & Addiction Awareness</h3>
           <p>
@@ -99,7 +99,7 @@ const AboutCSR = () => {
         </div>
 
         {/* Faculty & Leadership Training */}
-        <div className="csr-section">
+        <div className="csr-grid-item">
           <FaChalkboardTeacher className="icon" />
           <h3>Faculty & Leadership Training</h3>
           <p>
@@ -110,7 +110,7 @@ const AboutCSR = () => {
         </div>
 
         {/* Impact */}
-        <div className="csr-section">
+        <div className="csr-grid-item">
           <FaUsers className="icon" />
           <h3>Our Impact</h3>
           <p>

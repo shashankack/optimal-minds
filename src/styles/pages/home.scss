@@ -307,8 +307,11 @@
       font-size: 1rem;
       text-align: center;
     }
-    
   }
+}
+
+.testimonials-section {
+  display: flex;
 }
 
 .faq-contact-section {
@@ -318,5 +321,4 @@
   flex-direction: column;
   margin-top: 5%;
   gap: 160px;
-  padding: 0 40px 40px;
 }

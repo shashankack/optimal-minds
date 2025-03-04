@@ -36,6 +36,7 @@
 
     .faq-answer {
       margin-top: 20px;
+      height: 100%;
       overflow: hidden;
       transition: max-height 0.3s ease-in-out;
       max-height: 0;
@@ -48,6 +49,49 @@
     &.open {
       .faq-icon {
         transform: rotate(180deg);
+      }
+    }
+  }
+
+  @media screen and (max-width: 768px) {
+    .faq-item {
+      padding: 10px;
+    }
+
+    h2 {
+      font-size: 2rem;
+    }
+
+    .faq-item {
+      .faq-question {
+        font-size: 1rem;
+      }
+
+      .faq-answer {
+        p {
+          font-size: 1rem;
+        }
+      }
+    }
+  }
+
+  @media screen and (max-width: 500px) {
+    padding: 0 4%;
+    h2 {
+      font-size: 1.8rem;
+    }
+
+    .faq-item {
+      .faq-question {
+        font-size: 0.9rem;
+      }
+
+      .faq-answer {
+        overflow-y: scroll;
+        overflow-x: hidden;
+        p {
+          font-size: 0.9rem;
+        }
       }
     }
   }

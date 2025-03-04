@@ -1,19 +1,28 @@
 .services-section {
-  padding: 80px 10%;
+  padding: 80px 0;
   text-align: center;
-  height: 100vh;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 
   h2 {
     font-size: 2.5rem;
     color: #295a2d;
-    margin-bottom: 7%;
   }
 
   .services-container {
+    background-color: #43842390;
     display: flex;
     justify-content: space-between;
-    padding: 0 20px;
+    align-items: center;
+    border-radius: 20px;
+    padding: 20px;
+    width: 100%;
+    max-width: 1500px;
     margin: auto;
+    flex-wrap: wrap;
   }
 
   .services-list {
@@ -26,7 +35,7 @@
 
   .services-card {
     background-color: transparent;
-    color: #438423;
+    color: #fff;
     padding: 20px;
     width: 100%;
     text-align: center;
@@ -38,53 +47,48 @@
     font-family: "Gontserrat";
     position: relative;
     transition: background-color 0.3s ease-in-out;
-  
+
     &::before,
     &::after {
       content: "";
       position: absolute;
       width: 0;
       height: 2px;
-      background-color: #438423;
+      background-color: #fff;
       transition: width 0.5s ease-out;
     }
-  
+
     &::before {
       top: 0;
       left: 0;
     }
-  
+
     &::after {
       bottom: 0;
       right: 0;
     }
-  
+
     &:hover,
     &.active {
       &::before {
         width: 100%; // Expands the top border from left to right
       }
-  
+
       &::after {
         width: 100%; // Expands the bottom border from right to left
       }
-  
-      h3 {
-        letter-spacing: 0.05rem;
-        animation: bounce 0.5s ease-in;
-      }
     }
-  
+
     .service-icon {
-      font-size: 3rem;
+      font-size: 40px;
       margin-bottom: 10px;
     }
-  
+
     h3 {
       font-size: 1.6rem;
       transition: all 0.3s ease-in;
     }
-  
+
     @keyframes bounce {
       0% {
         letter-spacing: normal;
@@ -97,10 +101,9 @@
       }
     }
   }
-  
 
   .service-details {
-    width: 40%;
+    width: 50%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -111,19 +114,96 @@
 
     img {
       width: 100%;
-      height: 100%;
+      height: 450px;
       object-fit: cover;
       border-radius: 10px;
     }
 
     p {
-      bottom: 30px;
-      left: 30px;
+      bottom: 20px;
+      left: 20px;
       text-align: start;
       position: absolute;
       font-size: 1.2rem;
       color: #fff;
       max-width: 400px;
+      background: rgba(0, 0, 0, 0.5);
+      padding: 10px;
+      border-radius: 5px;
+    }
+  }
+
+  /* 📱 Mobile (up to 768px) */
+  @media (max-width: 768px) {
+    padding: 60px 0;
+
+    .services-container {
+      flex-direction: column;
+      gap: 30px;
+    }
+
+    .services-list {
+      justify-content: start;
+      align-items: start;
+      width: 100%;
+
+      h3 {
+        font-size: 1rem;
+      }
+    }
+
+    .services-card {
+      width: 100%;
+      flex-direction: row;
+      justify-content: start;
+      text-align: left;
+    }
+
+    .service-details {
+      display: none;
+    }
+  }
+
+  /* 📺 Tablet (768px - 1024px) */
+  @media (max-width: 1024px) {
+    .services-container {
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .services-list,
+    .service-details {
+      width: 90%;
+    }
+
+    .service-details img {
+      max-height: 300px;
+    }
+  }
+
+  /* 📟 Landscape mode (height < 500px) */
+  @media screen and (max-height: 500px) and (orientation: landscape) {
+    padding: 40px 5%;
+
+    .services-container {
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .services-list {
+      width: 45%;
+    }
+
+    .service-details {
+      width: 45%;
+      img {
+        max-height: 250px;
+      }
+
+      p {
+        font-size: 1rem;
+      }
     }
   }
 }

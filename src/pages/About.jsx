@@ -25,13 +25,13 @@ const About = () => {
       tl.fromTo(
         imageRef.current,
         { opacity: 0, scale: 0.95 },
-        { opacity: 1, scale: 1.1, duration: 1.2, ease: "power3.inOut" },
+        { opacity: 1, scale: 1.1, duration: 1, ease: "power3.inOut" },
       );
 
       tl.fromTo(
         titleRef.current,
         { opacity: 0, y: -50 },
-        { opacity: 1, y: 0, duration: 1, ease: "power3.out" },
+        { opacity: 1, y: 0, duration: .1, ease: "power3.out" },
         "+=0.2"
       );
 
@@ -39,7 +39,7 @@ const About = () => {
       tl.fromTo(
         textRef.current,
         { opacity: 0, y: -30 },
-        { opacity: 1, y: 0, duration: 1, ease: "power3.out" },
+        { opacity: 1, y: 0, duration: .5, ease: "power3.out" },
         "-=0.5"
       );
 

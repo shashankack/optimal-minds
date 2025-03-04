@@ -7,26 +7,36 @@
   font-family: "Gontserrat";
 }
 
-body::-webkit-scrollbar {
-  display: none;
+::-webkit-scrollbar {
+  width: 7px;
 }
+
+::-webkit-scrollbar-thumb {
+  background: #438423;
+  border-radius: 50px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
 
 /* .cta-button {
   font-family: "Gontserrat";
   font-weight: 500;
   font-size: 1.2vw;
   padding: clamp(10px, 2vw, 12px) clamp(24px, 2vw, 30px);
-  background: #1b4f21;
+  background: #438423;
   color: #fff;
-  border: 1px solid #1b4f21;
+  border: 1px solid #438423;
   cursor: pointer;
   border-radius: 50px;
   transition: all 0.3s ease-in-out;
 
   &.primary {
-    background: #1b4f21;
+    background: #438423;
     color: #fff;
-    border-color: #1b4f21;
+    border-color: #438423;
     transition: all 0.3s ease-in-out;
 
     &:hover {
@@ -44,12 +54,12 @@ body::-webkit-scrollbar {
   &.secondary {
     transition: all 0.3s ease-in-out;
     background: transparent;
-    color: #1b4f21;
-    border-color: #1b4f21;
+    color: #438423;
+    border-color: #438423;
 
     &:hover {
       transition: all 0.3s ease-in-out;
-      background: #1b4f21;
+      background: #438423;
       color: #fff;
       scale: 1.05;
     }
@@ -65,17 +75,17 @@ body::-webkit-scrollbar {
   font-weight: 500;
   font-size: 1rem;
   padding: clamp(10px, 2vw, 12px) clamp(24px, 2vw, 30px);
-  background: #1b4f21;
+  background: #438423;
   color: #fff;
-  border: 1px solid #1b4f21;
+  border: 1px solid #438423;
   cursor: pointer;
   border-radius: 50px;
   transition: all 0.3s ease-in-out;
 
   &.primary {
-    background: #1b4f21;
+    background: #438423;
     color: #fff;
-    border-color: #1b4f21;
+    border-color: #438423;
     transition: all 0.3s ease-in-out;
 
     &:hover {
@@ -93,12 +103,12 @@ body::-webkit-scrollbar {
   &.secondary {
     transition: all 0.3s ease-in-out;
     background: transparent;
-    color: #1b4f21;
-    border-color: #1b4f21;
+    color: #438423;
+    border-color: #438423;
 
     &:hover {
       transition: all 0.3s ease-in-out;
-      background: #1b4f21;
+      background: #438423;
       color: #fff;
       scale: 1.03;
     }

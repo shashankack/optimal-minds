@@ -12,9 +12,9 @@ gsap.registerPlugin(ScrollTrigger);
 const Testimonials = ({ testimonials, background }) => {
   return (
     <section className="testimonial-section">
-        <div className="background">
+        {/* <div className="background">
             <img src={background} alt="background" />
-        </div>
+        </div> */}
       <div className="container">
         <h2 className="testimonial-title">What Our Clients Say</h2>
 

@@ -13,7 +13,6 @@ const Navbar = () => {
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
 
-      // Shrink navbar when scrolling down past 50px
       setIsShrunk(currentScrollY > 50);
 
       // Hide navbar when scrolling down, show when scrolling up

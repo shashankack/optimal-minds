@@ -1,7 +1,6 @@
 import { useRef, useEffect } from "react";
 import "../styles/pages/home.scss";
 import heroBg from "../assets/images/hero-bg.png";
-import { HashLink } from "react-router-hash-link";
 import bgWhite from "../assets/images/bg-white.png";
 import { faqData, servicesData, testimonials } from "../data/dummyData";
 import gsap from "gsap";
@@ -82,7 +81,10 @@ const Home = () => {
       <section className="hero-section" style={{ display: "" }}>
         <img src={heroBg} />
 
-        <div className="hero-content" ref={heroContentRef}>
+        <div
+          className="hero-content"
+          ref={heroContentRef}
+        >
           <h1>Your Journey to Mental</h1>
           <h1>Wellness Starts Here.</h1>
           <p>
@@ -150,9 +152,9 @@ const Home = () => {
       </div>
 
       {/* Testimonials Section */}
-      <div style={{ display: "" }}>
+      <section className="testimonials-section" style={{ display: "" }}>
         <Testimonials testimonials={testimonials} background={bgWhite} />
-      </div>
+      </section>
 
       <section className="faq-contact-section" style={{ display: "" }}>
         <FAQ data={faqData} title="Your Mental Health Questions, Answered" />
